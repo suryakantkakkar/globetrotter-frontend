@@ -25,7 +25,7 @@ function App() {
   // Function to register user and fetch their score
   const handleRegister = () => {
     if (username) {
-      axios.post('http://localhost:5000/api/users/register', { username })
+      axios.post(`${process.env.REACT_APP_API_URL}api/users/register`, { username })
         .then((response) => {
           if (response.data.success) {
             setIsRegistered(true);
@@ -48,7 +48,7 @@ function App() {
 
   // Fetch the user's score after registration
   const fetchUserScore = (user = username) => {
-    axios.get(`http://localhost:5000/api/users/${user}`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/users/${user}`)
       .then((response) => {
         console.log("API Response:", response.data); // Debugging log
   
@@ -70,7 +70,7 @@ function App() {
 
   // Fetch invitee score when invitee is found
   const fetchInviteeScore = (invitee = inviteeName) => {
-    axios.get(`http://localhost:5000/api/users/${invitee}`)
+    axios.get(`${process.env.REACT_APP_API_URL}api/users/${invitee}`)
       .then((response) => {
         console.log("Invitee API Response:", response.data); // Debugging log
   

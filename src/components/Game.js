@@ -18,7 +18,7 @@ const Game = ({ userName }) => {
 
   const fetchNewDestination = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/destinations/random");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}api/destinations/random`);
       const data = await response.json();
       setCityData(data);
       setOptions([data.city, "New York", "Paris", "London"]); // Example options
@@ -44,7 +44,7 @@ const Game = ({ userName }) => {
   // Function to update the score in the database
   const updateScoreInDB = async (username, newScore) => {
     try {
-      await fetch(`http://localhost:5000/api/users/${username}/score`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}api/users/${username}/score`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ score: newScore }),
