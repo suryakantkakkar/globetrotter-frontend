@@ -106,7 +106,7 @@ function App() {
           {/* Show invitee's score if invitee exists */}
           {inviteeName && (
             <div>
-              <h3>Your freiend {inviteeName} has invited you to break his Score: {inviteeScore !== null ? inviteeScore : 'Loading...'}</h3>
+              <h3>Your friend {inviteeName} has invited you to break his Score: {inviteeScore !== null ? inviteeScore : 'Loading...'}</h3>
             </div>
           )}
         </div>
