@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ChallengeFriend = ({ userName }) => {
-  const inviteLink = `${process.env.REACT_APP_API_URL}invite/${userName}`;
+  const inviteLink = `https://globetrotter-frontend-git-main-suryakantkakkars-projects.vercel.app/invite/${userName}`;
 
   const handleShare = () => {
     const shareData = {
