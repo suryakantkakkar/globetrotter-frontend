@@ -1,13 +1,12 @@
 import React from 'react';
 
 const ChallengeFriend = ({ userName }) => {
-    const inviteLink = `${process.env.REACT_APP_BASE_URL}/invite/${userName}`;
+  const inviteLink = `${process.env.REACT_APP_API_URL}invite/${userName}`;
 
   const handleShare = () => {
     const shareData = {
       title: 'Challenge a Friend',
-      text: `Hey, join me in a fun destination quiz game! Check out my score and play against me`,
-      url: inviteLink,
+      text: `Hey, join me in a fun destination quiz game! Check out my score and play against me: ${inviteLink}`,
     };
     if (navigator.share) {
       navigator.share(shareData);
